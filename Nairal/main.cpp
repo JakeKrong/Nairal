@@ -3,10 +3,11 @@
 #include <chrono>
 #include <thread>
 #include "GameStateManager.h"
-//#include "ExplorationState.h"
+#include<optional>
+#include <SFML/Graphics.hpp>
 
 
-#include "Nairal.h"
+#include "main.h"
 
 class Nairal
 {
@@ -63,7 +64,22 @@ private:
 
 int main()
 {
-	Nairal nairal;
-	nairal.Run();
+	//Nairal nairal;
+	//nairal.Run();
+	sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "SFML 3 + C++20");
+
+	while (window.isOpen()) 
+	{
+		while (const std::optional event = window.pollEvent())
+		{
+			if (event->is < sf::Event::Closed>())
+			{
+				window.close();
+			}
+		}
+
+		window.clear();
+		window.display();
+	}
 	return 0;
 }
