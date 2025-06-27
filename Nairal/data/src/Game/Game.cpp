@@ -12,7 +12,7 @@
 #include <iostream>
 
 Game::Game()
-    : m_Window(sf::VideoMode({ 800, 600 }), "Platform Game", sf::Style::Close)
+    : m_Window(sf::VideoMode({ 800, 600 }), "Nairal: Dodge This!", sf::Style::Close)
 {
     m_Window.setFramerateLimit(60);
 
@@ -145,10 +145,10 @@ void PlayingState::Enter() {
     bgm.setVolume(40);
     bgm.play();
 
-    // Create test
-    Entity test = world.CreateEntity();
-    world.AddComponent(test, Transform{ {100.0f, 480.0f} });
-    world.AddComponent(test, Renderable{ {30, 30}, sf::Color::Blue, true });
+    //// Create test hitbox
+    //Entity testHitBox = world.CreateEntity();
+    //world.AddComponent(testHitBox, Transform{ {100.0f, 480.0f} });
+    //world.AddComponent(testHitBox, Renderable{ {30, 30}, sf::Color::Blue, true });
 
     // Create player
     m_Player = world.CreateEntity();

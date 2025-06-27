@@ -1,4 +1,19 @@
-## Build Instructions
+# Nairal: Dodge This! #
+
+************
+Description: 
+************
+A simple 2D dodge-and-survive game built with C++ and SFML, featuring systems such as a custom Entity-Component-System (ECS), sprite animation, audio, and escalating difficulty.
+
+# Gameplay
+You control a small character dodging barrages of meteors and birbs. The longer you survive, the faster and harder the game becomes.
+
+- Move left/right with **A/D**
+- Jump with **Spacebar**
+- Avoid obstacles
+- Survive as long as possible to increase your score
+
+## Build Instructions ##
 
 1. Make sure you have SFML 3.0.0 installed on your system
 2. Create a build directory: `mkdir build && cd build`
@@ -34,6 +49,7 @@
 - **CollisionSystem**: Detects collisions between entities
 - **RenderSystem**: Renders all visible entities
 - **LifetimeSystem**: Manages entity lifetimes
+- **AnimationSystem**: Manage entities animation frames
 
 ### Game States
 - **PlayingState**: Main gameplay loop
@@ -45,17 +61,3 @@
 - Different obstacle types unlock as time progresses
 - Obstacle speed increases with game time
 - Score system based on survival time
-
-### Game Mechanics
-- Left/Right movement with A/D or Arrow Keys
-- Jumping with Space or Up Arrow
-- Ground collision detection
-- Multiple obstacle types:
-  - Meteors falling from sky
-  - Cannonballs shooting from sides
-- Collision detection with game over on hit
-
-The game is fully scalable and follows modern C++ practices. You can easily add new components, systems, and obstacle types by following the established patterns.
-    std::array<Signature, MAX_ENTITIES> m_Signatures{};
-    std::uint32_t m_LivingEntityCount{};
-};
