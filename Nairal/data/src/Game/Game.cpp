@@ -34,6 +34,10 @@ void Game::Run() {
     while (m_Window.isOpen()) {
         float deltaTime = clock.restart().asSeconds();
 
+        // Clamp deltaTime to a max value (0.1s ~ 10 FPS)
+        if (deltaTime > 0.1f)
+            deltaTime = 0.1f;
+
 		while (auto optEvent = m_Window.pollEvent()) {
 			const sf::Event& event = *optEvent;
 
