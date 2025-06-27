@@ -1,4 +1,5 @@
 # Nairal: Dodge This! #
+![Nairal Showcase](https://github.com/user-attachments/assets/e77e6b3b-9afb-493e-b946-5613592d5d39)
 
 ************
 Description: 
