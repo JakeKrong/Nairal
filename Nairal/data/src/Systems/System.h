@@ -1,9 +1,17 @@
 #pragma once
 #include "../Core/Types.h"
-//Can instead change CMake config later to --> include_directories(${CMAKE_SOURCE_DIR}/src)
 #include <set>
+#include <iostream>
+
+class World;
 
 class System {
 public:
-	std::set<Entity> m_Entities;
+    std::set<Entity> m_Entities;
+
+    // Add world pointer
+    void SetWorld(World* world) { m_World = world; std::cout << "[LifetimeSystem] World set!\n";}
+
+protected:
+    World* m_World = nullptr;
 };

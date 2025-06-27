@@ -1,8 +1,46 @@
 ﻿add_executable(Nairal
-  "data/src/main.cpp" "data/src/dump.cpp" "data/src/Core/Types.h" "data/src/Core/EntityManager.cpp" "data/src/Core/EntityManager.h" "data/src/Game/Game.cpp" "data/src/Core/ComponentManager.h"  "data/src/Systems/System.h" "data/src/Core/World.h" "data/src/Core/World.cpp" "data/src/Components/Transform.h"  "data/src/Components/Component.h" "data/src/Systems/CollisionSystem.h" "data/src/Systems/ColliderSystem.cpp" "data/src/Systems/RenderSystem.h" "data/src/Systems/RenderSystem.cpp" "data/src/Systems/LifetimeSystem.h" "data/src/Systems/LifetimeSystem.cpp" "data/src/Game/StateManager.h")
+  "data/src/Core/Types.h" 
+  "data/src/Core/EntityManager.cpp" 
+  "data/src/Core/EntityManager.h" 
+  "data/src/Core/ComponentManager.h"  
+  "data/src/Core/ComponentManager.cpp"  
+  "data/src/Systems/System.h" 
+  "data/src/Core/SystemManager.h"
+  "data/src/Core/World.h" 
+  "data/src/Core/World.cpp" 
+  "data/src/Components/Transform.h" 
+  "data/src/Components/Renderable.h" 
+  "data/src/Components/Obstacle.h" 
+  "data/src/Components/Player.h" 
+  "data/src/Components/Obstacle.h" 
+  "data/src/Components/Collider.h" 
+  "data/src/Components/Physics.h" 
+  "data/src/Components/Component.h" 
+  "data/src/Systems/PhysicsSystem.h" 
+  "data/src/Systems/PhysicsSystem.cpp" 
+  "data/src/Systems/InputSystem.h" 
+  "data/src/Systems/InputSystem.cpp" 
+  "data/src/Systems/CollisionSystem.h" 
+  "data/src/Systems/CollisionSystem.cpp" 
+  "data/src/Systems/RenderSystem.h" 
+  "data/src/Systems/RenderSystem.cpp" 
+  "data/src/Systems/LifetimeSystem.h" 
+  "data/src/Systems/LifetimeSystem.cpp" 
+  "data/src/Game/StateManager.h"
+  "data/src/Game/StateManager.cpp"
+  "data/src/Game/Game.h"
+  "data/src/Game/Game.cpp"
+  "data/src/main.cpp" 
+  "data/src/Core/TextureManager.h" 
+  "data/src/Core/TextureManager.cpp" 
+  "data/src/Core/SoundManager.h" 
+  "data/src/Core/SoundManager.cpp"
+  "data/src/Systems/AnimationSystem.h" 
+  "data/src/Systems/AnimationSystem.cpp")
 
 target_link_libraries(Nairal PRIVATE
   sfml-graphics
   sfml-window
   sfml-system
+  sfml-audio
 )

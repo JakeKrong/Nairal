@@ -2,6 +2,7 @@
 #include "System.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 
-class RenderSystem :public System {
-	void Update(sf::RenderWindow& window);
+class RenderSystem : public System {
+public:
+    void Update(sf::RenderWindow& window);
 };

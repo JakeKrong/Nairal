@@ -1,5 +1,6 @@
 #pragma once
 #include "System.h"
+#include "../Core/World.h"
 #include <SFML/System/Time.hpp>
 
 class PhysicsSystem :public System{

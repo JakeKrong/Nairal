@@ -1,5 +1,6 @@
 #pragma once
 #include "System.h"
+#include "../Core/World.h"
 #include <SFML/Window/Event.hpp>
 
 class InputSystem :public System {

@@ -1,0 +1,61 @@
+## Build Instructions
+
+1. Make sure you have SFML 3.0.0 installed on your system
+2. Create a build directory: `mkdir build && cd build`
+3. Run CMake: `cmake ..`
+4. Build the project: `make` (or `cmake --build .`)
+5. Run the executable: `./Nairal`
+
+## Features Implemented
+
+### ECS Architecture
+- **Entity Manager**: Handles entity creation/destruction and signatures
+- **Component Manager**: Type-safe component storage with efficient memory layout
+- **System Manager**: Manages system registration and entity filtering
+- **World**: Unified interface for ECS operations
+
+### RAII & Smart Pointers
+- Uses `std::unique_ptr` and `std::shared_ptr` throughout
+- Custom `CreateRef` and `CreateScope` helper functions
+- Automatic memory management for all systems and components
+
+### Components
+- **Transform**: Position, scale, rotation
+- **Physics**: Velocity, acceleration, gravity
+- **Renderable**: Visual representation
+- **Collider**: Collision detection
+- **Player**: Player-specific properties
+- **Obstacle**: Obstacle types and damage
+- **Lifetime**: Automatic entity destruction
+
+### Systems
+- **InputSystem**: Handles keyboard input for player movement
+- **PhysicsSystem**: Applies gravity and updates positions
+- **CollisionSystem**: Detects collisions between entities
+- **RenderSystem**: Renders all visible entities
+- **LifetimeSystem**: Manages entity lifetimes
+
+### Game States
+- **PlayingState**: Main gameplay loop
+- **GameOverState**: Game over screen with restart option
+- **StateManager**: Manages state transitions
+
+### Progressive Difficulty
+- Spawn rate increases over time
+- Different obstacle types unlock as time progresses
+- Obstacle speed increases with game time
+- Score system based on survival time
+
+### Game Mechanics
+- Left/Right movement with A/D or Arrow Keys
+- Jumping with Space or Up Arrow
+- Ground collision detection
+- Multiple obstacle types:
+  - Meteors falling from sky
+  - Cannonballs shooting from sides
+- Collision detection with game over on hit
+
+The game is fully scalable and follows modern C++ practices. You can easily add new components, systems, and obstacle types by following the established patterns.
+    std::array<Signature, MAX_ENTITIES> m_Signatures{};
+    std::uint32_t m_LivingEntityCount{};
+};

@@ -3,7 +3,7 @@ enum class ObstacleTypes {
 	Ground,
 	Moving,
 	Meteor,
-	Canonball
+	Cannonball
 };
 
 struct Obstacle {

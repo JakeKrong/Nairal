@@ -1,11 +1,11 @@
 #pragma once
-#include "System.h"
+#include "../Systems/System.h"
 #include <vector>
 
-class LifetimeSystem :public System {
+class LifetimeSystem : public System {
 public:
-	void Update(float deltaTime);
+    void Update(float deltaTime);
 
 private:
-	std::vector<Entity> m_EntitiesToDestroy;
+    std::vector<Entity> m_EntitiesToDestroy;
 };
