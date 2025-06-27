@@ -281,7 +281,7 @@ void PlayingState::SpawnMeteor() {
     Entity meteor = world.CreateEntity();
     float x = m_SpawnDistribution(m_RandomGenerator);
 
-    world.AddComponent(meteor, Transform{ {x, -50.0f} });
+    world.AddComponent(meteor, Transform{ {x, -60.0f} });
     world.AddComponent(meteor, Physics{ {0.0f, 100.0f + m_GameTime * 10.0f}, {0.0f, 50.0f}, 1.0f, true });
     auto& meteorTexture = m_Game->m_TextureManager.Load("../../../../Nairal/data/Sprites/Meteor.png");
     world.AddComponent(meteor, Renderable{ {36.0f, 60.0f}, sf::Color::Red, true , &meteorTexture});
@@ -295,7 +295,7 @@ void PlayingState::SpawnCannonball() {
 
     Entity cannonball = world.CreateEntity();
     float side = float(m_RandomGenerator() % 2); // 0 = left, 1 = right
-    float x = side == 0 ? -30.0f : 830.0f;
+    float x = side == 0 ? -55.0f : 855.0f;
     float velocityX = side == 0 ? 200.0f + m_GameTime * 5.0f : -(200.0f + m_GameTime * 5.0f);
     bool xFlip = side == 0 ? true : false;
 
@@ -303,7 +303,7 @@ void PlayingState::SpawnCannonball() {
     world.AddComponent(cannonball, Physics{ {velocityX, 0.0f}, {0.0f, 0.0f}, 1.0f, false });
     auto& birdTexture = m_Game->m_TextureManager.Load("../../../../Nairal/data/Sprites/Bird.png");
     world.AddComponent(cannonball, Renderable{ {63.0f, 54.0f}, sf::Color::Yellow, true, &birdTexture, {{0,0},{63,54}}, true, 63,54, 0, 2, 0.3f, 0.0f, xFlip});
-    world.AddComponent(cannonball, Collider{ {55, 35} });
+    world.AddComponent(cannonball, Collider{ {50, 30} });
     world.AddComponent(cannonball, Obstacle{ ObstacleTypes::Cannonball, 1.0f, true });
     world.AddComponent(cannonball, Lifetime{ 8.0f, true });
     //std::cout << "THIS CANNONBALL IS FLIPPED? --> " << xFlip << "\n";
